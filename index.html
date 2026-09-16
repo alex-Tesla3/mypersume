@@ -154,21 +154,23 @@
   /* 项目验收单 */
   .sheet { position: relative; border: 1px solid var(--line); border-top: none; background: var(--surface); padding: clamp(20px, 3.5vw, 32px); }
   .sheet + .sheet-gap { height: 14px; }
-  .sheet-top { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px; margin-bottom: 10px; padding-right: 96px; }
+  .sheet-top { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px; margin-bottom: 10px; padding-right: 116px; }
   .sheet-top h3 { font-size: 1.3rem; font-weight: 800; }
   .sheet-top .ref { font-family: var(--mono); font-size: .74rem; color: var(--faint); letter-spacing: .08em; }
   .sheet p { color: var(--muted); font-size: .93rem; max-width: 40em; margin-bottom: 14px; }
   .sheet p strong { color: var(--ink); font-weight: 600; }
   .sheet .meta { font-size: .85rem; color: var(--muted); margin-bottom: 10px; }
   .sheet .meta b { color: var(--navy); font-weight: 700; }
+  .sheet .meta a { text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
   .stamp {
     position: absolute; top: 18px; right: 20px;
-    width: 84px; height: 84px; border: 3px double var(--red); border-radius: 50%;
+    width: 96px; height: 96px; border: 3px double var(--red); border-radius: 50%;
     display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px;
     color: var(--red); transform: rotate(8deg); background: color-mix(in srgb, var(--red) 4%, transparent);
+    overflow: hidden;
   }
-  .stamp .s1 { font-size: .95rem; font-weight: 800; letter-spacing: .2em; text-indent: .2em; }
-  .stamp .s2 { font-family: var(--mono); font-size: .56rem; letter-spacing: .1em; }
+  .stamp .s1 { font-size: .84rem; font-weight: 800; letter-spacing: .12em; text-indent: .12em; white-space: nowrap; }
+  .stamp .s2 { font-family: var(--mono); font-size: .54rem; letter-spacing: .04em; white-space: nowrap; }
   .sheet .metrics { display: flex; flex-wrap: wrap; gap: 10px 28px; border-top: 1px dashed var(--line); padding-top: 14px; }
   .metric .v { font-size: 1.15rem; font-weight: 800; color: var(--navy); }
   .metric .l { font-size: .76rem; color: var(--muted); }
@@ -225,9 +227,10 @@
     .themes { grid-template-columns: 1fr; }
     .skill-row { grid-template-columns: 1fr; }
     .skill-row .k { border-right: none; border-bottom: 1px solid var(--line); }
-    .stamp { width: 68px; height: 68px; }
-    .stamp .s1 { font-size: .78rem; }
-    .sheet-top { padding-right: 78px; }
+    .stamp { width: 82px; height: 82px; }
+    .stamp .s1 { font-size: .7rem; }
+    .stamp .s2 { font-size: .48rem; }
+    .sheet-top { padding-right: 94px; }
   }
 </style>
 </head>
@@ -433,6 +436,22 @@
         <div class="metric"><div class="v">1 个月</div><div class="l">需求侧全流程交付</div></div>
         <div class="metric"><div class="v">4 大场景</div><div class="l">预警 · 热点 · 竞品 · 口碑</div></div>
         <div class="metric"><div class="v">5+ 渠道</div><div class="l">多源公网采集方案</div></div>
+      </div>
+    </article>
+    <div class="sheet-gap"></div>
+
+    <article class="sheet">
+      <div class="stamp" aria-hidden="true"><span class="s1">在线运行</span><span class="s2">PERSONAL · 2026</span></div>
+      <div class="sheet-top">
+        <h3>游戏舆情竞品分析平台</h3>
+        <span class="ref">PRJ-04 · 个人项目</span>
+      </div>
+      <p class="meta">个人从 0 到 1 开发 · 持续迭代中 · <b><a href="https://game-analyzer-eq8i.onrender.com/" target="_blank" rel="noopener">访问在线 Demo →</a></b></p>
+      <p>延续游戏舆情方向，亲手搭建的在线分析平台：输入游戏名或 AppID，自动生成<strong>竞品口碑报告与 P0/P1 行动清单</strong>。数据基于 Steam / TapTap / Google Play 公开评论，支持导出 CSV / 飞书 / Jira。</p>
+      <div class="metrics">
+        <div class="metric"><div class="v">3 平台</div><div class="l">公开评论数据源</div></div>
+        <div class="metric"><div class="v">P0/P1</div><div class="l">可执行行动清单</div></div>
+        <div class="metric"><div class="v">CSV / 飞书</div><div class="l">报告导出与协作</div></div>
       </div>
     </article>
   </section>
