@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>王乐意 · AI 产品经理（客服 / 舆情方向）· 深圳</title>
+<title>王乐意 · AI 产品经理 · 深圳</title>
 <meta name="description" content="王乐意，15 年客服业务 × 2 个 AI 产品深度实战：参与大模型智能客服与文本质检产品建设，上线后负责效果评估与指标优化（意图识别 82%→94%），1 个月完成游戏舆情产品从 0 到 1 设计交付。求职意向：AI 产品经理。">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230B7D60'/%3E%3Ctext x='32' y='44' font-size='34' font-family='Songti SC,serif' font-weight='700' fill='white' text-anchor='middle'%3E乐%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231E4FA3'/%3E%3Ctext x='32' y='44' font-size='34' font-family='Songti SC,serif' font-weight='700' fill='white' text-anchor='middle'%3E乐%3C/text%3E%3C/svg%3E">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -20,639 +20,474 @@
 </script>
 <style>
   :root {
-    --paper: #F5F6F3;
+    --bg: #F1F3F6;
     --surface: #FFFFFF;
-    --ink: #1B2A2E;
-    --muted: #5C6B6B;
-    --faint: #8A9694;
-    --line: #DCE2DB;
-    --teal: #0B7D60;
-    --teal-deep: #085F4A;
-    --teal-wash: #E5F0EA;
-    --amber: #B45E12;
-    --amber-wash: #F6EBDD;
-    --serif: "Songti SC", "STSongti-SC", "Noto Serif CJK SC", "Source Han Serif SC", "SimSun", serif;
+    --ink: #182635;
+    --muted: #5A6B7C;
+    --faint: #8C9AA8;
+    --line: #D4DCE4;
+    --navy: #1E4FA3;
+    --navy-deep: #163A78;
+    --navy-wash: #E7EDF7;
+    --red: #C2402A;
+    --red-wash: #F9ECE8;
+    --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
     --sans: -apple-system, BlinkMacSystemFont, "PingFang SC", "HarmonyOS Sans SC", "MiSans", "Microsoft YaHei", "Segoe UI", sans-serif;
   }
-
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
   html { scroll-behavior: smooth; }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     *, *::before, *::after { animation: none !important; transition: none !important; }
   }
-
   body {
-    font-family: var(--sans);
-    background: var(--paper);
-    color: var(--ink);
-    font-size: 16.5px;
-    line-height: 1.8;
-    -webkit-font-smoothing: antialiased;
+    font-family: var(--sans); background: var(--bg); color: var(--ink);
+    font-size: 16px; line-height: 1.75; -webkit-font-smoothing: antialiased;
   }
-
   a { color: inherit; }
-  :focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; border-radius: 2px; }
+  :focus-visible { outline: 2px solid var(--navy); outline-offset: 3px; }
+  ::selection { background: var(--navy-wash); }
 
-  ::selection { background: var(--teal-wash); }
+  /* 档案头 */
+  .dossier-head {
+    background: var(--surface); border-bottom: 2px solid var(--ink);
+  }
+  .dossier-head .wrap { display: flex; flex-wrap: wrap; align-items: stretch; gap: 0; }
+  .dh-name {
+    padding: 34px clamp(20px, 4vw, 44px) 30px 0;
+    border-right: 1px solid var(--line);
+  }
+  .dh-name h1 { font-size: clamp(2rem, 4.5vw, 2.9rem); font-weight: 800; letter-spacing: .06em; line-height: 1.2; }
+  .dh-name .ref { font-family: var(--mono); font-size: .72rem; color: var(--faint); letter-spacing: .12em; margin-top: 8px; }
+  .dh-fields { flex: 1; display: grid; grid-template-columns: repeat(3, 1fr); }
+  .dh-field { padding: 26px clamp(14px, 2.4vw, 28px); border-right: 1px solid var(--line); display: flex; flex-direction: column; justify-content: center; gap: 3px; }
+  .dh-field:last-child { border-right: none; }
+  .dh-field .k { font-size: .74rem; color: var(--faint); letter-spacing: .18em; }
+  .dh-field .v { font-size: 1.02rem; font-weight: 700; }
+  .dh-field .v.open { color: var(--red); }
+  .dh-field .v.open::before { content: "● "; font-size: .7em; vertical-align: .12em; }
 
-  /* ---------- 导航 ---------- */
   .nav {
     position: sticky; top: 0; z-index: 50;
     display: flex; align-items: center; justify-content: space-between;
-    padding: 18px clamp(20px, 5vw, 56px);
-    background: color-mix(in srgb, var(--paper) 82%, transparent);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-bottom: 1px solid transparent;
-    transition: border-color .3s;
+    padding: 14px clamp(20px, 5vw, 56px);
+    background: color-mix(in srgb, var(--surface) 88%, transparent);
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
   }
-  .nav.scrolled { border-bottom-color: var(--line); }
-  .nav .wordmark {
-    font-family: var(--serif); font-weight: 700; font-size: 1.15rem;
-    text-decoration: none; letter-spacing: .06em;
-  }
-  .nav .wordmark em { font-style: normal; color: var(--teal); }
-  .nav ul { display: flex; gap: clamp(14px, 3vw, 32px); list-style: none; }
-  .nav ul a {
-    text-decoration: none; font-size: .92rem; color: var(--muted);
-    padding: 4px 2px; border-bottom: 2px solid transparent;
-    transition: color .2s, border-color .2s;
-  }
-  .nav ul a:hover { color: var(--ink); border-bottom-color: var(--teal); }
+  .nav .wordmark { font-weight: 800; font-size: 1rem; letter-spacing: .1em; text-decoration: none; }
+  .nav ul { display: flex; gap: clamp(14px, 3vw, 30px); list-style: none; }
+  .nav ul a { text-decoration: none; font-size: .9rem; color: var(--muted); padding: 4px 2px; border-bottom: 2px solid transparent; transition: color .2s, border-color .2s; }
+  .nav ul a:hover { color: var(--ink); border-bottom-color: var(--navy); }
 
-  /* ---------- 通用布局 ---------- */
-  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 56px); }
+  .wrap { max-width: 1060px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 56px); }
+  section { padding: clamp(56px, 8vw, 92px) 0 0; }
+  .sec-head {
+    display: flex; align-items: baseline; justify-content: space-between;
+    border-bottom: 2px solid var(--ink); padding-bottom: 12px; margin-bottom: 8px;
+  }
+  .sec-head h2 { font-size: clamp(1.25rem, 2.6vw, 1.6rem); font-weight: 800; letter-spacing: .04em; }
+  .sec-head .code { font-family: var(--mono); font-size: .74rem; color: var(--faint); letter-spacing: .12em; }
 
-  section { border-top: 1px solid var(--line); padding: clamp(64px, 9vw, 104px) 0; }
-  .sec-grid {
-    display: grid; grid-template-columns: 180px 1fr; gap: clamp(28px, 5vw, 72px);
-    align-items: start;
+  /* 摘要 */
+  .summary { background: var(--surface); border: 1px solid var(--line); border-top: none; padding: clamp(22px, 4vw, 34px); }
+  .summary .big {
+    font-size: clamp(1.15rem, 2.4vw, 1.5rem); font-weight: 800; line-height: 1.6; margin-bottom: 16px; max-width: 30em;
   }
-  .sec-label {
-    font-size: .95rem; font-weight: 600; color: var(--muted);
-    letter-spacing: .35em; writing-mode: vertical-rl;
-    border-left: 1px solid var(--line); padding-left: 14px;
-    position: sticky; top: 96px;
-  }
-  h2 {
-    font-family: var(--serif); font-weight: 900;
-    font-size: clamp(1.55rem, 3.2vw, 2.1rem); line-height: 1.4;
-    margin-bottom: 28px;
-  }
+  .summary .big em { font-style: normal; color: var(--navy); }
+  .summary p { color: var(--muted); max-width: 46em; margin-bottom: 12px; }
+  .summary p strong { color: var(--ink); font-weight: 600; }
+  .kpis { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--line); margin-top: 22px; }
+  .kpi { padding: 16px 18px; border-right: 1px solid var(--line); }
+  .kpi:last-child { border-right: none; }
+  .kpi .v { font-size: 1.45rem; font-weight: 800; color: var(--navy); letter-spacing: -.01em; }
+  .kpi .v small { font-size: .85rem; color: var(--muted); font-weight: 600; }
+  .kpi .l { font-size: .76rem; color: var(--muted); margin-top: 2px; }
+  .kpi-src { font-size: .74rem; color: var(--faint); margin-top: 8px; font-family: var(--mono); letter-spacing: .04em; }
 
-  /* ---------- Hero ---------- */
-  .hero {
-    border-top: none;
-    display: grid; grid-template-columns: 1.08fr .92fr;
-    gap: clamp(36px, 5vw, 64px); align-items: center;
-    padding: clamp(64px, 10vw, 128px) 0 clamp(72px, 9vw, 112px);
-  }
-  .status {
-    display: inline-flex; align-items: center; gap: 9px;
-    font-size: .88rem; color: var(--teal-deep); font-weight: 600;
-    background: var(--teal-wash); border: 1px solid color-mix(in srgb, var(--teal) 22%, transparent);
-    border-radius: 999px; padding: 6px 16px; margin-bottom: 30px;
-  }
-  .status i {
-    width: 8px; height: 8px; border-radius: 50%; background: var(--teal);
-    animation: pulse 2.4s ease-in-out infinite;
-  }
-  @keyframes pulse { 0%,100% { opacity: 1 } 50% { opacity: .35 } }
+  /* 漏斗（表格化） */
+  .funnel-table { border: 1px solid var(--line); border-top: none; background: var(--surface); padding: 22px clamp(18px, 3vw, 30px) 20px; }
+  .ft-row { display: grid; grid-template-columns: 92px 1fr 86px; gap: 14px; align-items: center; padding: 9px 0; border-bottom: 1px dashed var(--line); }
+  .ft-row:last-of-type { border-bottom: none; }
+  .ft-stage { font-size: .84rem; font-weight: 700; color: var(--muted); }
+  .ft-track { height: 30px; background: var(--bg); border: 1px solid var(--line); position: relative; }
+  .ft-fill { height: 100%; display: flex; align-items: center; }
+  .ft-fill.ai { background: var(--navy); color: #fff; font-size: .78rem; font-weight: 600; padding-left: 10px; white-space: nowrap; }
+  .ft-fill.human { background: var(--red); color: #fff; font-size: .78rem; font-weight: 600; padding-left: 10px; white-space: nowrap; }
+  .ft-fill.all { background: var(--navy-wash); border-right: 2px solid var(--navy); color: var(--navy-deep); font-size: .78rem; font-weight: 600; padding-left: 10px; }
+  .ft-val { font-family: var(--mono); font-size: .95rem; font-weight: 700; text-align: right; }
+  .ft-note { font-size: .8rem; color: var(--muted); padding-top: 12px; }
+  .ft-note b { color: var(--red); font-weight: 700; }
 
-  h1 {
-    font-family: var(--serif); font-weight: 900;
-    font-size: clamp(2.5rem, 6vw, 4rem);
-    line-height: 1.22; letter-spacing: .015em;
-    margin-bottom: 26px;
-  }
-  .lede {
-    font-size: clamp(1rem, 1.6vw, 1.12rem); color: var(--muted);
-    max-width: 34em; margin-bottom: 38px;
-  }
-  .lede strong { color: var(--ink); font-weight: 600; }
-  .lede .up { color: var(--amber); font-weight: 700; }
-
-  .cta-row { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
-  .btn {
-    display: inline-flex; align-items: center; gap: 8px;
-    text-decoration: none; font-weight: 600; font-size: .98rem;
-    border-radius: 999px; padding: 13px 30px;
-    transition: transform .15s, box-shadow .15s, background .15s;
-  }
-  .btn-primary { background: var(--teal); color: #fff; }
-  .btn-primary:hover { background: var(--teal-deep); transform: translateY(-1px); box-shadow: 0 6px 18px color-mix(in srgb, var(--teal) 30%, transparent); }
-  .btn-ghost { color: var(--ink); border: 1.5px solid var(--line); background: var(--surface); }
-  .btn-ghost:hover { border-color: var(--ink); }
-
-  /* ---------- 漏斗面板 ---------- */
-  .funnel-panel {
-    background: var(--surface); border: 1px solid var(--line);
-    border-radius: 16px; padding: 30px 30px 24px;
-    box-shadow: 0 18px 44px -24px rgba(27, 42, 46, .18);
-  }
-  .funnel-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 2px 12px; margin-bottom: 6px; }
-  .funnel-head b { font-size: 1rem; font-weight: 600; }
-  .funnel-head span { font-size: .78rem; color: var(--faint); }
-  .funnel-svg { display: block; width: 100%; height: auto; }
-  .funnel-svg text { font-family: var(--sans); }
-  .band-label { font-size: 13.5px; font-weight: 600; }
-  .band-sub { font-size: 12px; fill: var(--faint); }
-
-  .dot { opacity: 0; }
-  .dot.t { animation: fallT 6.8s linear infinite; }
-  .dot.a { animation: fallA 6.8s linear infinite; }
-  .dot.t:nth-of-type(1) { animation-delay: 0s }   .dot.t:nth-of-type(2) { animation-delay: .7s }
-  .dot.t:nth-of-type(3) { animation-delay: 1.4s } .dot.t:nth-of-type(4) { animation-delay: 2.1s }
-  .dot.t:nth-of-type(5) { animation-delay: 2.8s } .dot.t:nth-of-type(6) { animation-delay: 3.5s }
-  .dot.t:nth-of-type(7) { animation-delay: 4.2s } .dot.t:nth-of-type(8) { animation-delay: 4.9s }
-  .dot.t:nth-of-type(9) { animation-delay: 5.6s } .dot.a:nth-of-type(10) { animation-delay: 1.8s }
-  .dot.a:nth-of-type(11) { animation-delay: 4.5s }
-  @keyframes fallT {
-    0% { transform: translateY(0); opacity: 0 }
-    10% { opacity: .85 }
-    72% { transform: translateY(92px); opacity: .85 }
-    82%, 100% { transform: translateY(92px); opacity: 0 }
-  }
-  @keyframes fallA {
-    0% { transform: translateY(0); opacity: 0 }
-    10% { opacity: .85 }
-    74% { transform: translateY(160px); opacity: .85 }
-    84%, 100% { transform: translateY(160px); opacity: 0 }
-  }
-  @media (prefers-reduced-motion: reduce) { .dot { display: none } .status i { animation: none } }
-
-  .funnel-stats {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 18px 24px;
-    border-top: 1px solid var(--line); margin-top: 22px; padding-top: 20px;
-  }
-  .fstat .v {
-    font-size: 1.5rem; font-weight: 700; line-height: 1.2;
-    font-variant-numeric: normal; letter-spacing: -.01em;
-  }
-  .fstat .v small { font-size: .9rem; font-weight: 600; color: var(--muted); }
-  .fstat .l { font-size: .8rem; color: var(--muted); margin-top: 2px; }
-  .funnel-cap { font-size: .76rem; color: var(--faint); margin-top: 18px; }
-
-  /* ---------- 关于 ---------- */
-  .about-lead {
-    font-family: var(--serif); font-weight: 700;
-    font-size: clamp(1.35rem, 2.6vw, 1.75rem); line-height: 1.55;
-    margin-bottom: 26px; max-width: 24em;
-  }
-  .about-lead em { font-style: normal; color: var(--teal); }
-  .about-text p { color: var(--muted); margin-bottom: 18px; max-width: 44em; }
-  .about-text p strong { color: var(--ink); font-weight: 600; }
-
-  .points { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 44px; }
-  .point h3 {
-    font-family: var(--serif); font-size: 1.08rem; font-weight: 700;
-    margin-bottom: 8px; display: flex; align-items: center; gap: 10px;
-  }
-  .point h3::before { content: ""; width: 7px; height: 7px; background: var(--teal); border-radius: 1px; flex: none; }
-  .point p { font-size: .92rem; color: var(--muted); line-height: 1.75; }
-
-  /* ---------- 经历 ---------- */
-  .job { padding: 34px 0; border-top: 1px solid var(--line); }
-  .job:first-of-type { border-top: none; padding-top: 0; }
-  .job-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px; margin-bottom: 6px; }
-  .job-head h3 { font-family: var(--serif); font-size: 1.35rem; font-weight: 700; }
-  .job-head .role { font-size: .95rem; color: var(--teal-deep); font-weight: 600; }
-  .job-head .period { margin-left: auto; font-size: .88rem; color: var(--faint); font-variant-numeric: tabular-nums; }
-  .job-lead { color: var(--muted); font-size: .97rem; max-width: 46em; margin-bottom: 20px; }
+  /* 经历 */
+  .job { border: 1px solid var(--line); border-top: none; background: var(--surface); padding: clamp(20px, 3.5vw, 32px); }
+  .job + .job-gap { height: 14px; }
+  .job-top { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; margin-bottom: 4px; }
+  .job-top h3 { font-size: 1.25rem; font-weight: 800; }
+  .job-top .role { font-size: .92rem; color: var(--navy); font-weight: 700; }
+  .job-top .period { margin-left: auto; font-family: var(--mono); font-size: .78rem; color: var(--faint); }
+  .job-lead { color: var(--muted); font-size: .94rem; max-width: 46em; margin-bottom: 16px; }
   .job-lead strong { color: var(--ink); font-weight: 600; }
-
   .job ul { list-style: none; }
   .job ul li {
-    position: relative; padding-left: 22px; margin-bottom: 10px;
-    color: var(--muted); font-size: .95rem; max-width: 46em;
+    display: flex; gap: 12px; align-items: baseline;
+    padding: 7px 0; border-bottom: 1px dashed var(--line);
+    color: var(--muted); font-size: .93rem;
   }
-  .job ul li::before { content: ""; position: absolute; left: 2px; top: .72em; width: 8px; height: 1.5px; background: var(--teal); }
+  .job ul li:last-child { border-bottom: none; }
+  .job ul li::before { content: "▸"; color: var(--navy); flex: none; font-size: .8em; }
   .job ul li strong { color: var(--ink); font-weight: 600; }
-
   .note {
-    margin-top: 18px; background: var(--amber-wash);
-    border-left: 3px solid var(--amber); border-radius: 0 10px 10px 0;
-    padding: 14px 18px; font-size: .9rem; color: var(--ink); max-width: 46em;
+    margin-top: 16px; background: var(--red-wash);
+    border-left: 3px solid var(--red); padding: 12px 16px;
+    font-size: .88rem; color: var(--ink); max-width: 46em;
   }
-  .note b { font-weight: 600; }
-
-  .themes { display: grid; grid-template-columns: 1fr 1fr; gap: 26px 40px; margin-top: 8px; }
-  .theme h4 {
-    font-size: .98rem; font-weight: 700; margin-bottom: 10px;
-    padding-bottom: 8px; border-bottom: 1px solid var(--line);
-  }
+  .note b { font-weight: 700; }
+  .themes { display: grid; grid-template-columns: 1fr 1fr; gap: 22px 36px; margin-top: 6px; }
+  .theme h4 { font-size: .95rem; font-weight: 800; margin-bottom: 8px; color: var(--navy-deep); }
   .theme ul { list-style: none; }
-  .theme ul li {
-    position: relative; padding-left: 20px; margin-bottom: 8px;
-    font-size: .9rem; color: var(--muted); line-height: 1.7;
-  }
-  .theme ul li::before { content: ""; position: absolute; left: 2px; top: .72em; width: 8px; height: 1.5px; background: var(--teal); }
+  .theme ul li { display: flex; gap: 10px; align-items: baseline; padding: 6px 0; border-bottom: 1px dashed var(--line); font-size: .89rem; color: var(--muted); line-height: 1.65; }
+  .theme ul li:last-child { border-bottom: none; }
+  .theme ul li::before { content: "▸"; color: var(--navy); flex: none; font-size: .8em; }
   .theme ul li strong { color: var(--ink); font-weight: 600; }
 
-  /* ---------- 项目 ---------- */
-  .case { padding: 40px 0; border-top: 1px solid var(--line); }
-  .case:first-of-type { border-top: none; padding-top: 0; }
-  .case-grid { display: grid; grid-template-columns: 1fr 1.25fr; gap: clamp(24px, 4vw, 56px); align-items: start; }
-  .case-meta h3 { font-family: var(--serif); font-size: 1.5rem; font-weight: 900; line-height: 1.4; margin-bottom: 12px; }
-  .case-meta .meta { font-size: .86rem; color: var(--muted); line-height: 2; }
-  .case-meta .meta b { color: var(--teal-deep); font-weight: 600; }
-  .case-body p { color: var(--muted); font-size: .95rem; margin-bottom: 20px; max-width: 38em; }
-  .case-body p strong { color: var(--ink); font-weight: 600; }
-  .metrics { display: flex; flex-wrap: wrap; gap: 12px 36px; }
-  .metric .v { font-size: 1.3rem; font-weight: 700; letter-spacing: -.01em; }
-  .metric .l { font-size: .78rem; color: var(--muted); }
-
-  /* ---------- 技能 ---------- */
-  .skills { display: grid; grid-template-columns: 1fr 1fr; gap: 30px 48px; }
-  .skill-group h3 { font-size: 1rem; font-weight: 700; margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
-  .skill-group h3::before { content: ""; width: 7px; height: 7px; background: var(--teal); border-radius: 1px; flex: none; }
-  .tags { display: flex; flex-wrap: wrap; gap: 9px; }
-  .tag {
-    font-size: .86rem; color: var(--ink);
-    background: var(--surface); border: 1px solid var(--line);
-    border-radius: 999px; padding: 6px 15px;
+  /* 项目验收单 */
+  .sheet { position: relative; border: 1px solid var(--line); border-top: none; background: var(--surface); padding: clamp(20px, 3.5vw, 32px); }
+  .sheet + .sheet-gap { height: 14px; }
+  .sheet-top { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px; margin-bottom: 10px; padding-right: 96px; }
+  .sheet-top h3 { font-size: 1.3rem; font-weight: 800; }
+  .sheet-top .ref { font-family: var(--mono); font-size: .74rem; color: var(--faint); letter-spacing: .08em; }
+  .sheet p { color: var(--muted); font-size: .93rem; max-width: 40em; margin-bottom: 14px; }
+  .sheet p strong { color: var(--ink); font-weight: 600; }
+  .sheet .meta { font-size: .85rem; color: var(--muted); margin-bottom: 10px; }
+  .sheet .meta b { color: var(--navy); font-weight: 700; }
+  .stamp {
+    position: absolute; top: 18px; right: 20px;
+    width: 84px; height: 84px; border: 3px double var(--red); border-radius: 50%;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px;
+    color: var(--red); transform: rotate(8deg); background: color-mix(in srgb, var(--red) 4%, transparent);
   }
+  .stamp .s1 { font-size: .95rem; font-weight: 800; letter-spacing: .2em; text-indent: .2em; }
+  .stamp .s2 { font-family: var(--mono); font-size: .56rem; letter-spacing: .1em; }
+  .sheet .metrics { display: flex; flex-wrap: wrap; gap: 10px 28px; border-top: 1px dashed var(--line); padding-top: 14px; }
+  .metric .v { font-size: 1.15rem; font-weight: 800; color: var(--navy); }
+  .metric .l { font-size: .76rem; color: var(--muted); }
 
-  /* ---------- 教育与联系 ---------- */
-  .edu { margin-bottom: 52px; }
-  .edu-row {
-    display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px;
-    padding: 13px 0; border-bottom: 1px solid var(--line);
-  }
-  .edu-row b { font-family: var(--serif); font-size: 1.05rem; font-weight: 700; }
-  .edu-row span { color: var(--muted); font-size: .92rem; }
-  .edu-row .deg { margin-left: auto; font-size: .85rem; color: var(--faint); }
+  /* 技能 */
+  .skill-table { border: 1px solid var(--line); border-top: none; background: var(--surface); }
+  .skill-row { display: grid; grid-template-columns: 140px 1fr; border-bottom: 1px solid var(--line); }
+  .skill-row:last-child { border-bottom: none; }
+  .skill-row .k { padding: 14px 18px; font-size: .9rem; font-weight: 800; color: var(--navy-deep); border-right: 1px solid var(--line); background: var(--navy-wash); }
+  .skill-row .v { padding: 12px 18px; font-size: .9rem; color: var(--muted); display: flex; flex-wrap: wrap; gap: 4px 0; }
+  .skill-row .v span::after { content: " /"; color: var(--line); padding: 0 6px; }
+  .skill-row .v span:last-child::after { content: ""; padding: 0; }
 
-  .closing {
-    font-family: var(--serif); font-weight: 900;
-    font-size: clamp(1.7rem, 4vw, 2.5rem); line-height: 1.45;
-    max-width: 18em; margin-bottom: 44px;
-  }
-  .closing em { font-style: normal; color: var(--teal); }
-  .contact-row { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+  /* 教育 · 联系 */
+  .edu-ct { border: 1px solid var(--line); border-top: none; background: var(--surface); padding: clamp(20px, 3.5vw, 32px); }
+  .edu-ct .edu-row { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; padding: 10px 0; border-bottom: 1px dashed var(--line); }
+  .edu-ct .edu-row b { font-size: 1rem; font-weight: 800; }
+  .edu-ct .edu-row span { color: var(--muted); font-size: .9rem; }
+  .edu-ct .edu-row .deg { margin-left: auto; font-family: var(--mono); font-size: .76rem; color: var(--faint); }
+  .closing { font-size: clamp(1.35rem, 3vw, 1.8rem); font-weight: 800; line-height: 1.5; max-width: 20em; margin: 36px 0 24px; }
+  .closing em { font-style: normal; color: var(--red); }
+  .contact-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-bottom: 8px; }
   .contact-chip {
     display: inline-flex; align-items: center; gap: 10px;
-    background: var(--surface); border: 1px solid var(--line);
-    border-radius: 999px; padding: 11px 22px;
-    font-size: .95rem; font-weight: 600; text-decoration: none;
-    transition: border-color .2s;
+    background: var(--bg); border: 1px solid var(--line);
+    padding: 10px 20px; font-size: .93rem; font-weight: 700; text-decoration: none; transition: border-color .2s;
   }
-  .contact-chip:hover { border-color: var(--teal); }
+  .contact-chip:hover { border-color: var(--navy); }
   .contact-chip .copy {
-    border: none; background: var(--teal-wash); color: var(--teal-deep);
-    font-size: .76rem; font-weight: 600; border-radius: 999px;
-    padding: 3px 10px; cursor: pointer; font-family: var(--sans);
+    border: none; background: var(--navy); color: #fff;
+    font-size: .74rem; font-weight: 600; padding: 3px 10px; cursor: pointer; font-family: var(--sans);
   }
-  .contact-chip .copy:hover { background: color-mix(in srgb, var(--teal) 22%, white); }
-  .loc { display: inline-flex; align-items: center; gap: 7px; color: var(--muted); font-size: .92rem; margin-left: 6px; }
-  .loc svg { width: 15px; height: 15px; stroke: var(--teal); fill: none; stroke-width: 2; }
+  .loc { display: inline-flex; align-items: center; gap: 7px; color: var(--muted); font-size: .9rem; font-weight: 700; }
 
-  footer {
-    border-top: 1px solid var(--line); padding: 30px 0 44px;
-    font-size: .82rem; color: var(--faint);
-  }
+  footer { padding: 34px 0 46px; font-size: .8rem; color: var(--faint); font-family: var(--mono); letter-spacing: .04em; }
   footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; }
 
-  /* ---------- 响应式 ---------- */
+
   @media (max-width: 920px) {
-    .hero { grid-template-columns: 1fr; }
-    .sec-grid { grid-template-columns: 1fr; gap: 18px; }
-    .sec-label { writing-mode: horizontal-tb; letter-spacing: .3em; border-left: none; border-bottom: 1px solid var(--line); padding: 0 0 10px; position: static; }
-    .case-grid { grid-template-columns: 1fr; }
-    .points { grid-template-columns: 1fr; gap: 22px; }
+    .dh-fields { grid-template-columns: 1fr 1fr; }
+    .dh-name { border-right: none; border-bottom: 1px solid var(--line); padding-right: 0; }
+    .dh-field { border-right: none; border-bottom: 1px solid var(--line); padding: 16px clamp(14px, 3vw, 24px); }
+    .kpis { grid-template-columns: 1fr 1fr; }
+    .kpi:nth-child(2) { border-right: none; }
+    .kpi:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
     .themes { grid-template-columns: 1fr; }
-    .skills { grid-template-columns: 1fr; }
   }
-  @media (max-width: 560px) {
-    body { font-size: 15.5px; }
+  @media (max-width: 620px) {
+    body { font-size: 15px; }
     .nav ul { gap: 12px; }
-    .nav ul a { font-size: .85rem; }
-    .funnel-stats { gap: 14px 16px; }
-    .fstat .v { font-size: 1.25rem; }
-    .job-head .period { margin-left: 0; width: 100%; }
+    .nav ul a { font-size: .84rem; }
+    .kpis { grid-template-columns: 1fr 1fr; }
+    .ft-row { grid-template-columns: 74px 1fr 68px; gap: 10px; }
+    .themes { grid-template-columns: 1fr; }
+    .skill-row { grid-template-columns: 1fr; }
+    .skill-row .k { border-right: none; border-bottom: 1px solid var(--line); }
+    .stamp { width: 68px; height: 68px; }
+    .stamp .s1 { font-size: .78rem; }
+    .sheet-top { padding-right: 78px; }
   }
 </style>
 </head>
 <body>
 
-<header class="nav" id="nav">
-  <a class="wordmark" href="#top">王乐意<em>.</em></a>
-  <nav aria-label="站内导航">
-    <ul>
-      <li><a href="#about">关于</a></li>
-      <li><a href="#exp">经历</a></li>
-      <li><a href="#projects">项目</a></li>
-      <li><a href="#skills">技能</a></li>
-      <li><a href="#contact">联系</a></li>
-    </ul>
-  </nav>
+<header class="dossier-head">
+  <div class="wrap">
+    <div class="dh-name">
+      <h1>王乐意</h1>
+      <p class="ref">REF: WL-2026-SZ · 客服产品 → AI 产品</p>
+    </div>
+    <div class="dh-fields">
+      <div class="dh-field">
+        <span class="k">求职意向</span>
+        <span class="v">AI 产品经理</span>
+      </div>
+      <div class="dh-field">
+        <span class="k">当前状态</span>
+        <span class="v open">正在看机会</span>
+      </div>
+      <div class="dh-field">
+        <span class="k">base 城市</span>
+        <span class="v">深圳</span>
+      </div>
+    </div>
+  </div>
 </header>
+
+<nav class="nav" aria-label="站内导航">
+  <a class="wordmark" href="#top">王乐意 · 档案</a>
+  <ul>
+    <li><a href="#about">摘要</a></li>
+    <li><a href="#exp">经历</a></li>
+    <li><a href="#projects">验收项目</a></li>
+    <li><a href="#skills">技能</a></li>
+    <li><a href="#contact">联系</a></li>
+  </ul>
+</nav>
 
 <main class="wrap" id="top">
 
-  <!-- ============ Hero ============ -->
-  <section class="hero">
-    <div>
-      <p class="status"><i aria-hidden="true"></i>正在看机会 · 求职意向：AI 产品经理</p>
-      <h1>从客服现场，<br>到 AI 产品。</h1>
-      <p class="lede">
-        王乐意，深圳。15 年客服业务，2 个 AI 产品深度实战：作为业务方参与大模型智能客服与文本质检产品建设，上线后主导效果评估与指标优化，意图识别准确率
-        <strong>82% → <span class="up">94%</span></strong>；最近用 1 个月完成游戏舆情产品从 0 到 1 的设计交付。
-      </p>
-      <div class="cta-row">
-        <a class="btn btn-primary" href="#projects">查看 AI 项目</a>
-        <a class="btn btn-ghost" href="tel:18123777416">181-2377-7416</a>
-      </div>
-    </div>
-
-    <aside class="funnel-panel" aria-label="智能客服漏斗示意">
-      <div class="funnel-head">
-        <b>我亲手跑通的客服漏斗</b>
-        <span>AI 预筛 + 人工专席</span>
-      </div>
-      <svg class="funnel-svg" viewBox="0 0 360 210" role="img"
-           aria-label="漏斗示意：用户对话进入，AI 预筛自动解决 85%，其余 15% 由人工专席复核">
-        <!-- 顶层：用户对话 -->
-        <rect x="60" y="4" width="240" height="40" rx="9" fill="var(--teal-wash)"/>
-        <text x="180" y="29" text-anchor="middle" class="band-label" fill="var(--teal-deep)">用户对话</text>
-        <!-- AI 层：85% -->
-        <rect x="78" y="72" width="204" height="40" rx="9" fill="var(--teal)"/>
-        <text x="180" y="97" text-anchor="middle" class="band-label" fill="#fff">AI 预筛 · 自动解决 85%</text>
-        <!-- 人工层：15% -->
-        <rect x="150" y="140" width="36" height="40" rx="9" fill="var(--amber)"/>
-        <text x="196" y="158" class="band-label" fill="var(--ink)">人工专席复核</text>
-        <text x="196" y="175" class="band-sub">15% · 误判清单反哺模型迭代</text>
-        <!-- 流动的对话点 -->
-        <g fill="var(--teal)">
-          <circle class="dot t" cx="130" cy="14" r="3.5"/>
-          <circle class="dot t" cx="160" cy="10" r="3.5"/>
-          <circle class="dot t" cx="190" cy="16" r="3.5"/>
-          <circle class="dot t" cx="220" cy="12" r="3.5"/>
-          <circle class="dot t" cx="145" cy="20" r="3.5"/>
-          <circle class="dot t" cx="205" cy="22" r="3.5"/>
-          <circle class="dot t" cx="175" cy="8"  r="3.5"/>
-          <circle class="dot t" cx="235" cy="18" r="3.5"/>
-          <circle class="dot t" cx="112" cy="16" r="3.5"/>
-        </g>
-        <g fill="var(--amber)">
-          <circle class="dot a" cx="166" cy="18" r="3.5"/>
-          <circle class="dot a" cx="214" cy="10" r="3.5"/>
-        </g>
-      </svg>
-      <div class="funnel-stats">
-        <div class="fstat">
-          <div class="v"><span data-count="94">94</span><small>%</small></div>
-          <div class="l">意图识别准确率（自 82%）</div>
-        </div>
-        <div class="fstat">
-          <div class="v"><span data-count="85">85</span><small>%</small></div>
-          <div class="l">AI 自动解决率</div>
-        </div>
-        <div class="fstat">
-          <div class="v"><span data-count="120">120</span><small>+</small></div>
-          <div class="l">日均节省人工工时（小时）</div>
-        </div>
-        <div class="fstat">
-          <div class="v">−<span data-count="25">25</span><small>%</small></div>
-          <div class="l">人工工单量</div>
-        </div>
-      </div>
-      <p class="funnel-cap">数据来自冰川网络智能客服项目（2022 – 2024）</p>
-    </aside>
-  </section>
-
-  <!-- ============ 关于 ============ -->
   <section id="about">
-    <div class="sec-grid">
-      <p class="sec-label">关于我</p>
-      <div class="about-text">
-        <p class="about-lead">带过 50 人客服团队，也把 <em>2 个 AI 产品</em>从需求跟到了上线指标。</p>
-        <p>
-          做了 15 年客服：在冰川网络从一线坐席做到智能客服总监，带过 50 人的团队。
-          智能客服、文本质检两个 AI 产品的需求侧都有我的位置——<strong>PRD、流程图、验收标准到上线后的模型效果评估，全程跟到底</strong>；模型与技术方案由算法团队主导。
-        </p>
-        <p>
-          本科数学、硕士 MBA，<strong>数据是底子，产品是主动选择的方向</strong>。
-          习惯用召回率、精确率、F1 说清楚一个模型好不好，而不是凭感觉；最近在赛刻智能用 1 个月完成了游戏舆情产品从 0 到 1 的需求侧闭环。
-        </p>
-        <div class="points">
-          <div class="point">
-            <h3>双重视角</h3>
-            <p>管理过 50 人客服团队，也在 AI 产品里同时站在业务与产品两边。需求从一线来，方案能落地，跟研发、算法对话无障碍。</p>
+    <div class="sec-head">
+      <h2>摘要 · 关于我</h2>
+      <span class="code">SEC-01</span>
+    </div>
+    <div class="summary">
+      <p class="big">带过 50 人客服团队，也把 <em>2 个 AI 产品</em>从需求跟到了上线指标。</p>
+      <p>
+        做了 15 年客服：在冰川网络从一线坐席做到智能客服总监。智能客服、文本质检两个 AI 产品的需求侧都有我的位置——
+        <strong>PRD、流程图、验收标准到上线后的模型效果评估，全程跟到底</strong>；模型与技术方案由算法团队主导。
+        本科数学、硕士 MBA，<strong>数据是底子，产品是主动选择的方向</strong>——习惯用召回率、精确率、F1 说清楚一个模型好不好，而不是凭感觉。
+      </p>
+      <div class="kpis">
+        <div class="kpi"><div class="v">94<small>%</small></div><div class="l">意图识别准确率（自 82%）</div></div>
+        <div class="kpi"><div class="v">85<small>%</small></div><div class="l">AI 自动解决率</div></div>
+        <div class="kpi"><div class="v">120<small>+</small></div><div class="l">日均节省人工工时（小时）</div></div>
+        <div class="kpi"><div class="v">−25<small>%</small></div><div class="l">人工工单量</div></div>
+      </div>
+      <p class="kpi-src">SRC: 冰川网络智能客服项目 · 2022–2024</p>
+
+      <div style="margin-top: 26px;">
+        <div class="funnel-table">
+          <div class="ft-row">
+            <span class="ft-stage">用户对话</span>
+            <div class="ft-track"><div class="ft-fill all" style="width: 100%;">全量进入</div></div>
+            <span class="ft-val">100%</span>
           </div>
-          <div class="point">
-            <h3>数据底子</h3>
-            <p>数学本科 + MBA。盯「命中率—解决率—满意度」漏斗，把一线误判 case 整理成清单反哺算法迭代。</p>
+          <div class="ft-row">
+            <span class="ft-stage">AI 预筛</span>
+            <div class="ft-track"><div class="ft-fill ai" style="width: 85%;">自动解决</div></div>
+            <span class="ft-val">85%</span>
           </div>
-          <div class="point">
-            <h3>从 0 到 1</h3>
-            <p>1 个月内跑通游戏舆情产品的场景定义、PRD、原型与采集方案，验证过完整的产品闭环能力。</p>
+          <div class="ft-row">
+            <span class="ft-stage">人工专席</span>
+            <div class="ft-track"><div class="ft-fill human" style="width: 15%; min-width: 34px;"></div></div>
+            <span class="ft-val">15%</span>
           </div>
         </div>
+        <p class="ft-note">我亲手跑通的客服漏斗：<b>15% 疑难对话</b>经人工专席复核后，误判清单按周反哺模型迭代——漏斗越收越窄，模型越跑越准。</p>
       </div>
     </div>
   </section>
 
-  <!-- ============ 经历 ============ -->
   <section id="exp">
-    <div class="sec-grid">
-      <p class="sec-label">工作经历</p>
-      <div>
-        <article class="job">
-          <div class="job-head">
-            <h3>深圳赛刻智能科技</h3>
-            <span class="role">产品执行经理 · 短期项目合作</span>
-            <span class="period">2026.08 – 2026.09 · 深圳</span>
-          </div>
-          <p class="job-lead">游戏舆情监测产品从 0 到 1，1 个月内完成需求侧全流程交付。</p>
+    <div class="sec-head">
+      <h2>工作经历</h2>
+      <span class="code">SEC-02</span>
+    </div>
+
+    <article class="job">
+      <div class="job-top">
+        <h3>深圳赛刻智能科技</h3>
+        <span class="role">产品执行经理 · 短期项目合作</span>
+        <span class="period">2026.08 – 2026.09 · 深圳</span>
+      </div>
+      <p class="job-lead">游戏舆情监测产品从 0 到 1，1 个月内完成需求侧全流程交付。</p>
+      <ul>
+        <li>梳理<strong>预警、热点、竞品、口碑</strong>四大核心场景，交付完整 PRD、用户旅程图与验收标准</li>
+        <li>设计<strong>多源公网数据采集方案</strong>，覆盖社区、贴吧、微博、应用商店评论，规划清洗与聚合链路</li>
+        <li>完成需求分层与优先级排序，圈定 MVP 范围，与算法、爬虫、前后端对齐技术方案</li>
+      </ul>
+      <p class="note">
+        <b>为什么只有一个月：</b>项目方向与我长期深耕的产品路线不同，友好协商收尾。
+        这段经历验证了我从 0 到 1 跑通一个产品的能力——缺的只是时间和场景。
+      </p>
+    </article>
+    <div class="job-gap"></div>
+
+    <article class="job">
+      <div class="job-top">
+        <h3>深圳冰川网络</h3>
+        <span class="role">智能客服总监 / 客服运营主管</span>
+        <span class="period">2010.06 – 2024.08 · 深圳</span>
+      </div>
+      <p class="job-lead">
+        14 年，从一线坐席到智能客服总监。<strong>深度参与智能客服、文本质检两个 AI 产品的需求与效果优化</strong>，
+        带过最大 50 人的团队，通过产品化与流程优化累计年化节省成本超 50 万。
+      </p>
+      <div class="themes">
+        <div class="theme">
+          <h4>智能客服</h4>
           <ul>
-            <li>梳理<strong>预警、热点、竞品、口碑</strong>四大核心场景，交付完整 PRD、用户旅程图与验收标准</li>
-            <li>设计<strong>多源公网数据采集方案</strong>，覆盖社区、贴吧、微博、应用商店评论，规划清洗与聚合链路</li>
-            <li>完成需求分层与优先级排序，圈定 MVP 范围，与算法、爬虫、前后端对齐技术方案</li>
+            <li>作为业务方深度参与<strong>规则引擎 → 大模型</strong>的产品升级：需求、PRD、流程图、验收标准出自我手，从小样本验证到多产品线铺开全程跟进；模型与技术方案由算法团队主导</li>
+            <li>设计<strong>「AI 预筛 + 人工专席复核」</strong>机制，AI 自动处理高频场景，人工工单量降 25%，日均节省工时 120+ 小时</li>
+            <li>上线后盯「命中率—解决率—满意度」漏斗，整理误判漏判清单反哺模型：意图识别 <strong>82% → 94%</strong>，未知问题识别率降 38%</li>
           </ul>
-          <p class="note">
-            <b>为什么只有一个月：</b>项目方向与我长期深耕的产品路线不同，友好协商收尾。
-            这段经历验证了我从 0 到 1 跑通一个产品的能力——缺的只是时间和场景。
-          </p>
-        </article>
-
-        <article class="job">
-          <div class="job-head">
-            <h3>深圳冰川网络</h3>
-            <span class="role">智能客服总监 / 客服运营主管</span>
-            <span class="period">2010.06 – 2024.08 · 深圳</span>
-          </div>
-          <p class="job-lead">
-            14 年，从一线坐席到智能客服总监。<strong>深度参与智能客服、文本质检两个 AI 产品的需求与效果优化</strong>，
-            带过最大 50 人的团队，通过产品化与流程优化累计年化节省成本超 50 万。
-          </p>
-          <div class="themes">
-            <div class="theme">
-              <h4>智能客服</h4>
-              <ul>
-                <li>作为业务方深度参与<strong>规则引擎 → 大模型</strong>的产品升级：需求、PRD、流程图、验收标准出自我手，TAPD 跟到上线；模型与技术方案由算法团队主导</li>
-                <li>设计<strong>「AI 预筛 + 人工专席复核」</strong>机制，AI 自动处理高频场景，人工工单量降 25%，日均节省工时 120+ 小时</li>
-                <li>上线后盯「命中率—解决率—满意度」漏斗，整理误判漏判清单反哺模型：意图识别 <strong>82% → 94%</strong>，未知问题识别率降 38%</li>
-              </ul>
-            </div>
-            <div class="theme">
-              <h4>文本质检</h4>
-              <ul>
-                <li>设计规则业务逻辑——按场景列关键词清单（充值 / 违规 / 舆情 / 合规），关键规则与算法共同 review</li>
-                <li>沉淀 <strong>200+ 条结构化规则</strong>，召回、精确、F1 多轮闭环调优，覆盖合规话术、重大舆情、违规禁词</li>
-                <li>搭建白名单防误判机制，误判率显著下降</li>
-              </ul>
-            </div>
-            <div class="theme">
-              <h4>团队与 SOP</h4>
-              <ul>
-                <li>以<strong>「效率—质量—成本」</strong>三维模型管理 50 人团队，人均日处理量提升 25%</li>
-                <li>主笔 <strong>21 项核心 SOP</strong>（含重大舆情、合规指南），新人上岗周期从 14 天缩到 7 天</li>
-                <li>重构语雀知识库，建立 Case 库沉淀机制，一线 SOP 反哺客服系统，业务与产品形成闭环</li>
-              </ul>
-            </div>
-            <div class="theme">
-              <h4>跨部门协作</h4>
-              <ul>
-                <li>TAPD 全流程跟项目，智能客服系统、<strong>Power BI 看板</strong>、工单自动化从需求到上线全程参与</li>
-                <li>业务、研发、算法三方对齐顺畅，需求评审一次通过率高</li>
-              </ul>
-            </div>
-          </div>
-        </article>
+        </div>
+        <div class="theme">
+          <h4>文本质检</h4>
+          <ul>
+            <li>设计规则业务逻辑——按场景列关键词清单（充值 / 违规 / 舆情 / 合规），关键规则与算法共同 review</li>
+            <li>沉淀 <strong>200+ 条结构化规则</strong>，召回、精确、F1 多轮闭环调优，覆盖合规话术、重大舆情、违规禁词</li>
+            <li>搭建白名单防误判机制，误判率显著下降</li>
+          </ul>
+        </div>
+        <div class="theme">
+          <h4>团队与 SOP</h4>
+          <ul>
+            <li>以<strong>「效率—质量—成本」</strong>三维模型管理 50 人团队，人均日处理量提升 25%</li>
+            <li>主笔 <strong>21 项核心 SOP</strong>（含重大舆情、合规指南），新人上岗周期从 14 天缩到 7 天</li>
+            <li>重构语雀知识库，建立 Case 库沉淀机制，一线 SOP 反哺客服系统，业务与产品形成闭环</li>
+          </ul>
+        </div>
+        <div class="theme">
+          <h4>跨部门协作</h4>
+          <ul>
+            <li>TAPD 全流程跟项目，智能客服系统、<strong>Power BI 看板</strong>、工单自动化从需求到上线全程参与</li>
+            <li>业务、研发、算法三方对齐顺畅，需求评审一次通过率高</li>
+          </ul>
+        </div>
       </div>
-    </div>
+    </article>
   </section>
 
-  <!-- ============ 项目 ============ -->
   <section id="projects">
-    <div class="sec-grid">
-      <p class="sec-label">项目精选</p>
-      <div>
-        <article class="case">
-          <div class="case-grid">
-            <div class="case-meta">
-              <h3>智能客服大模型升级</h3>
-              <p class="meta">深圳冰川网络 · 2022 – 2024<br>角色：<b>业务方 · 需求与效果侧</b> · 5 个月上线</p>
-            </div>
-            <div class="case-body">
-              <p>从规则引擎到大模型的客服系统升级。我作为业务方输出 <strong>需求、PRD 与验收标准</strong>，上线后主导效果评估——盯「命中率—解决率—满意度」漏斗，把误判 case 整理成清单反哺算法迭代；模型与架构由算法团队主导。</p>
-              <div class="metrics">
-                <div class="metric"><div class="v">82% → 94%</div><div class="l">意图识别准确率</div></div>
-                <div class="metric"><div class="v">85%</div><div class="l">AI 自动解决率</div></div>
-                <div class="metric"><div class="v">−25%</div><div class="l">人工工单量</div></div>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <article class="case">
-          <div class="case-grid">
-            <div class="case-meta">
-              <h3>文本智能质检产品</h3>
-              <p class="meta">深圳冰川网络 · 2021 – 2023<br>角色：<b>业务侧 · 规则设计</b></p>
-            </div>
-            <div class="case-body">
-              <p>面向<strong>合规话术、重大舆情、违规禁词</strong>场景的文本质检体系。我设计规则业务逻辑（工程同学实现正则），与算法一起 review 关键规则，召回 / 精确 / F1 闭环调优。</p>
-              <div class="metrics">
-                <div class="metric"><div class="v">200+</div><div class="l">结构化规则</div></div>
-                <div class="metric"><div class="v">F1 闭环</div><div class="l">多轮调优</div></div>
-                <div class="metric"><div class="v">白名单</div><div class="l">防误判机制</div></div>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <article class="case">
-          <div class="case-grid">
-            <div class="case-meta">
-              <h3>游戏舆情产品设计</h3>
-              <p class="meta">深圳赛刻智能 · 2026.08 – 2026.09<br>角色：<b>设计 Owner</b> · 1 个月交付</p>
-            </div>
-            <div class="case-body">
-              <p>舆情监测产品从 0 到 1：<strong>场景定义、PRD、用户旅程、原型与多源采集方案</strong>，与算法、爬虫完成需求评审，产品达到可立项状态。</p>
-              <div class="metrics">
-                <div class="metric"><div class="v">1 个月</div><div class="l">需求侧全流程交付</div></div>
-                <div class="metric"><div class="v">4 大场景</div><div class="l">预警 · 热点 · 竞品 · 口碑</div></div>
-                <div class="metric"><div class="v">5+ 渠道</div><div class="l">多源公网采集方案</div></div>
-              </div>
-            </div>
-          </div>
-        </article>
-      </div>
+    <div class="sec-head">
+      <h2>AI 项目 · 验收单</h2>
+      <span class="code">SEC-03</span>
     </div>
+
+    <article class="sheet">
+      <div class="stamp" aria-hidden="true"><span class="s1">已验证</span><span class="s2">2022–2024</span></div>
+      <div class="sheet-top">
+        <h3>智能客服大模型升级</h3>
+        <span class="ref">PRJ-01</span>
+      </div>
+      <p class="meta">深圳冰川网络 · 2022 – 2024 · 角色：<b>业务方 · 需求与效果侧</b> · 5 个月上线</p>
+      <p>从规则引擎到大模型的客服系统升级。我作为业务方输出 <strong>需求、PRD 与验收标准</strong>，上线后主导效果评估——盯「命中率—解决率—满意度」漏斗，把误判 case 整理成清单反哺算法迭代；模型与架构由算法团队主导。</p>
+      <div class="metrics">
+        <div class="metric"><div class="v">82% → 94%</div><div class="l">意图识别准确率</div></div>
+        <div class="metric"><div class="v">85%</div><div class="l">AI 自动解决率</div></div>
+        <div class="metric"><div class="v">−25%</div><div class="l">人工工单量</div></div>
+      </div>
+    </article>
+    <div class="sheet-gap"></div>
+
+    <article class="sheet">
+      <div class="stamp" aria-hidden="true"><span class="s1">已验证</span><span class="s2">2021–2023</span></div>
+      <div class="sheet-top">
+        <h3>文本智能质检产品</h3>
+        <span class="ref">PRJ-02</span>
+      </div>
+      <p class="meta">深圳冰川网络 · 2021 – 2023 · 角色：<b>业务侧 · 规则设计</b></p>
+      <p>面向<strong>合规话术、重大舆情、违规禁词</strong>场景的文本质检体系。我设计规则业务逻辑（工程同学实现正则），与算法一起 review 关键规则，召回 / 精确 / F1 闭环调优。</p>
+      <div class="metrics">
+        <div class="metric"><div class="v">200+</div><div class="l">结构化规则</div></div>
+        <div class="metric"><div class="v">F1 闭环</div><div class="l">多轮调优</div></div>
+        <div class="metric"><div class="v">白名单</div><div class="l">防误判机制</div></div>
+      </div>
+    </article>
+    <div class="sheet-gap"></div>
+
+    <article class="sheet">
+      <div class="stamp" aria-hidden="true"><span class="s1">已验证</span><span class="s2">2026.08–09</span></div>
+      <div class="sheet-top">
+        <h3>游戏舆情产品设计</h3>
+        <span class="ref">PRJ-03</span>
+      </div>
+      <p class="meta">深圳赛刻智能 · 2026.08 – 2026.09 · 角色：<b>设计 Owner</b> · 1 个月交付</p>
+      <p>舆情监测产品从 0 到 1：<strong>场景定义、PRD、用户旅程、原型与多源采集方案</strong>，与算法、爬虫完成需求评审，产品达到可立项状态。</p>
+      <div class="metrics">
+        <div class="metric"><div class="v">1 个月</div><div class="l">需求侧全流程交付</div></div>
+        <div class="metric"><div class="v">4 大场景</div><div class="l">预警 · 热点 · 竞品 · 口碑</div></div>
+        <div class="metric"><div class="v">5+ 渠道</div><div class="l">多源公网采集方案</div></div>
+      </div>
+    </article>
   </section>
 
-  <!-- ============ 技能 ============ -->
   <section id="skills">
-    <div class="sec-grid">
-      <p class="sec-label">技能清单</p>
-      <div class="skills">
-        <div class="skill-group">
-          <h3>产品</h3>
-          <div class="tags">
-            <span class="tag">PRD</span><span class="tag">用户旅程</span><span class="tag">流程图</span>
-            <span class="tag">版本规划</span><span class="tag">需求评审</span>
-          </div>
-        </div>
-        <div class="skill-group">
-          <h3>AI 与数据</h3>
-          <div class="tags">
-            <span class="tag">数据标注</span><span class="tag">意图识别</span><span class="tag">正则表达式</span>
-            <span class="tag">模型效果评估</span><span class="tag">召回 / 精确 / F1</span>
-          </div>
-        </div>
-        <div class="skill-group">
-          <h3>工具</h3>
-          <div class="tags">
-            <span class="tag">TAPD</span><span class="tag">Power BI</span><span class="tag">SQL</span>
-            <span class="tag">Python</span><span class="tag">Excel 透视表</span><span class="tag">Xmind</span><span class="tag">Visio</span>
-          </div>
-        </div>
-        <div class="skill-group">
-          <h3>业务</h3>
-          <div class="tags">
-            <span class="tag">SLA 管理</span><span class="tag">首解率 / 满意度漏斗</span>
-            <span class="tag">Case 库与 SOP 沉淀</span><span class="tag">BPO 团队管理</span>
-          </div>
-        </div>
+    <div class="sec-head">
+      <h2>技能清单</h2>
+      <span class="code">SEC-04</span>
+    </div>
+    <div class="skill-table">
+      <div class="skill-row">
+        <div class="k">产品</div>
+        <div class="v"><span>PRD</span><span>用户旅程</span><span>流程图</span><span>版本规划</span><span>需求评审</span></div>
+      </div>
+      <div class="skill-row">
+        <div class="k">AI 与数据</div>
+        <div class="v"><span>数据标注</span><span>意图识别</span><span>正则表达式</span><span>模型效果评估</span><span>召回 / 精确 / F1</span></div>
+      </div>
+      <div class="skill-row">
+        <div class="k">工具</div>
+        <div class="v"><span>TAPD</span><span>Power BI</span><span>SQL</span><span>Python</span><span>Excel 透视表</span><span>Xmind</span><span>Visio</span></div>
+      </div>
+      <div class="skill-row">
+        <div class="k">业务</div>
+        <div class="v"><span>SLA 管理</span><span>首解率 / 满意度漏斗</span><span>Case 库与 SOP 沉淀</span><span>BPO 团队管理</span></div>
       </div>
     </div>
   </section>
 
-  <!-- ============ 教育与联系 ============ -->
   <section id="contact">
-    <div class="sec-grid">
-      <p class="sec-label">联系</p>
-      <div>
-        <div class="edu">
-          <div class="edu-row">
-            <b>西班牙武康大学</b><span>工商管理（MBA）</span><span class="deg">硕士</span>
-          </div>
-          <div class="edu-row">
-            <b>郑州轻工业大学</b><span>信息与计算科学（数学 / 计算机交叉）· CET-4</span><span class="deg">本科 · 统招</span>
-          </div>
-        </div>
+    <div class="sec-head">
+      <h2>教育 · 联系</h2>
+      <span class="code">SEC-05</span>
+    </div>
+    <div class="edu-ct">
+      <div class="edu-row">
+        <b>西班牙武康大学</b><span>工商管理（MBA）</span><span class="deg">硕士</span>
+      </div>
+      <div class="edu-row">
+        <b>郑州轻工业大学</b><span>信息与计算科学（数学 / 计算机交叉）· CET-4</span><span class="deg">本科 · 统招</span>
+      </div>
 
-        <p class="closing">想找一个能长期把<em>客服 AI 产品</em>做厚做深的平台。</p>
+      <p class="closing">想找一个能长期把<em>AI 产品</em>做厚做深的平台。</p>
 
-        <div class="contact-row">
-          <a class="contact-chip" href="tel:18123777416">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            181-2377-7416
-          </a>
-          <span class="contact-chip">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
-            44727383@qq.com
-            <button class="copy" type="button" id="copyEmail" aria-label="复制邮箱地址">复制</button>
-          </span>
-          <span class="loc">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-            深圳
-          </span>
-        </div>
+      <div class="contact-row">
+        <a class="contact-chip" href="tel:18123777416">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          181-2377-7416
+        </a>
+        <span class="contact-chip">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+          44727383@qq.com
+          <button class="copy" type="button" id="copyEmail" aria-label="复制邮箱地址">复制</button>
+        </span>
+        <span class="loc">深圳</span>
       </div>
     </div>
   </section>
@@ -661,25 +496,11 @@
 <footer>
   <div class="wrap">
     <span>© 2026 王乐意 · AI 产品经理</span>
-    <span>最后更新 2026.09 · 深圳</span>
+    <span>UPDATED 2026.09 · SHENZHEN</span>
   </div>
 </footer>
 
-<!-- 方案切换浮标（对比用，上线前删除） -->
-<div class="switcher" aria-label="设计版本切换" style="position:fixed;right:16px;bottom:16px;z-index:99;display:flex;gap:6px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:6px 8px;box-shadow:0 8px 24px rgba(27,42,46,.14);">
-  <a href="/" style="font-size:.78rem;font-weight:600;text-decoration:none;color:var(--muted);padding:4px 12px;border-radius:999px;background:var(--teal);color:#fff;">方案 A</a>
-  <a href="/v2.html" style="font-size:.78rem;font-weight:600;text-decoration:none;color:var(--muted);padding:4px 12px;">方案 B</a>
-  <a href="/v3.html" style="font-size:.78rem;font-weight:600;text-decoration:none;color:var(--muted);padding:4px 12px;">方案 C</a>
-</div>
-
 <script>
-  // 导航滚动时出现底边线
-  const nav = document.getElementById('nav');
-  addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', scrollY > 8);
-  }, { passive: true });
-
-  // 邮箱复制，按钮内联反馈；clipboard API 不可用时降级为 execCommand（兼容微信内置浏览器等环境）
   const copyBtn = document.getElementById('copyEmail');
   const fallbackCopy = text => {
     const ta = document.createElement('textarea');
@@ -701,27 +522,6 @@
     copyBtn.textContent = ok ? '已复制' : '请手动复制';
     setTimeout(() => { copyBtn.textContent = '复制'; }, 2000);
   });
-
-  // 数字滚动：进入视口时执行一次；系统开启减弱动态效果则直接显示最终值
-  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const nums = document.querySelectorAll('[data-count]');
-  const animate = el => {
-    const target = +el.dataset.count;
-    if (reduced) { el.textContent = target; return; }
-    const dur = 1100, t0 = performance.now();
-    const tick = now => {
-      const p = Math.min((now - t0) / dur, 1);
-      el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3)));
-      if (p < 1) requestAnimationFrame(tick);
-    };
-    requestAnimationFrame(tick);
-  };
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { animate(e.target); io.unobserve(e.target); }
-    });
-  }, { threshold: .6 });
-  nums.forEach(n => io.observe(n));
 </script>
 </body>
 </html>
