@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: mypersume
+    name: theo-resume
     runtime: static
     staticPublishPath: .
     headers:
